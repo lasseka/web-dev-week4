@@ -50,7 +50,7 @@ const updateBlog = async (req, res) => {
   }
 
   try {
-    const updatedBlog = await Blog.findOneAndUpdate(
+    const updatedBlog = await Blog.findOneAndReplace(
       { _id: blogId },
       { ...req.body },
       { new: true }
